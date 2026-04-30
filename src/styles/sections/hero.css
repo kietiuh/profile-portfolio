@@ -11,6 +11,31 @@
   z-index: 2;
 }
 
+.hero-chips {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-chips span {
+  position: absolute;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 999px;
+  background: rgba(255,255,255,.42);
+  color: #86868b;
+  box-shadow: 0 16px 50px rgba(29,29,31,.08);
+  backdrop-filter: blur(18px) saturate(1.35);
+  font-size: .86rem;
+  font-weight: 650;
+  animation: chip-float 9s ease-in-out infinite alternate;
+}
+
+.hero-chips span:nth-child(1) { left: 8%; top: 24%; }
+.hero-chips span:nth-child(2) { right: 10%; top: 30%; animation-delay: -3s; }
+.hero-chips span:nth-child(3) { left: 18%; bottom: 22%; animation-delay: -6s; }
+
 .hero-title {
   max-width: 1050px;
   margin-top: 18px;
@@ -47,9 +72,21 @@
   border-radius: 999px;
   background: var(--text);
   color: white;
+  transform: translate(var(--magnet-x, 0), var(--magnet-y, 0));
   font-weight: 650;
   letter-spacing: -0.02em;
+  gap: 8px;
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.hero-cta span,
+.contact-button span {
+  transition: transform 180ms ease;
+}
+
+.hero-cta:hover span,
+.contact-button:hover span {
+  transform: translateX(3px);
 }
 
 .hero-cta:hover,
@@ -82,7 +119,36 @@
   animation-delay: -7s;
 }
 
+@media (max-width: 860px) {
+  .hero-chips { display: none; }
+}
+
 @media (max-width: 680px) {
-  .hero-title { font-size: clamp(3.5rem, 18vw, 6.2rem); }
+  .hero-chips {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-chips span {
+  position: absolute;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 999px;
+  background: rgba(255,255,255,.42);
+  color: #86868b;
+  box-shadow: 0 16px 50px rgba(29,29,31,.08);
+  backdrop-filter: blur(18px) saturate(1.35);
+  font-size: .86rem;
+  font-weight: 650;
+  animation: chip-float 9s ease-in-out infinite alternate;
+}
+
+.hero-chips span:nth-child(1) { left: 8%; top: 24%; }
+.hero-chips span:nth-child(2) { right: 10%; top: 30%; animation-delay: -3s; }
+.hero-chips span:nth-child(3) { left: 18%; bottom: 22%; animation-delay: -6s; }
+
+.hero-title { font-size: clamp(3.5rem, 18vw, 6.2rem); }
   .hero-copy { font-size: 1rem; }
 }

@@ -8,6 +8,11 @@
   to { transform: translate3d(7vw, -4vh, 0) scale(1.12); }
 }
 
+@keyframes chip-float {
+  from { transform: translate3d(0, 0, 0) rotate(-1deg); }
+  to { transform: translate3d(12px, -18px, 0) rotate(1deg); }
+}
+
 @keyframes ticker-scroll {
   to { transform: translateX(-50%); }
 }

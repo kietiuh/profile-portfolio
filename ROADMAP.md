@@ -13,8 +13,8 @@ Quality gate before every commit:
 - [x] 01. Add roadmap/task tracker and quality checklist.
 - [x] 02. Introduce JavaScript architecture and data-driven project rendering.
 - [x] 03. Refactor CSS into section files for maintainability.
-- [ ] 04. Add scroll reveal motion system with reduced-motion support.
-- [ ] 05. Upgrade hero with richer product-launch motion and floating chips.
+- [x] 04. Add scroll reveal motion system with reduced-motion support.
+- [x] 05. Upgrade hero with richer product-launch motion and floating chips.
 - [ ] 06. Add interactive magnetic CTA and refined button micro-interactions.
 - [ ] 07. Upgrade phone mockups and in-phone UI details.
 - [ ] 08. Add carousel center-focus behavior and project accent state.
