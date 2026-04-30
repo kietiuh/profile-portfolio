@@ -594,3 +594,97 @@
     min-height: 250px;
   }
 }
+
+/* Showcase polish pass: separate the project label from the notch and lighten the device scale. */
+.phone-rail {
+  grid-auto-columns: minmax(280px, 330px);
+  gap: clamp(22px, 4vw, 48px);
+}
+
+.phone-frame {
+  width: min(100%, 300px);
+  max-width: 300px;
+  min-height: 620px;
+  padding: 10px;
+  border-radius: 42px;
+  background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(223,224,229,.88));
+}
+
+.phone-frame::before {
+  top: 16px;
+  width: 70px;
+  height: 22px;
+}
+
+.phone-screen {
+  padding: 72px 22px 26px;
+  border-radius: 32px;
+  gap: 18px;
+}
+
+.status-pill {
+  top: 43px;
+  padding: 5px 10px;
+  background: rgba(255,255,255,.14);
+  font-size: .7rem;
+  line-height: 1;
+  z-index: 2;
+}
+
+.screen-widget {
+  min-height: 250px;
+}
+
+.phone-title {
+  font-size: clamp(1.58rem, 2.25vw, 1.86rem);
+  max-width: 12ch;
+}
+
+.phone-description {
+  max-width: 24ch;
+  font-size: .88rem;
+}
+
+.day-card,
+.habit-rings {
+  min-height: 94px;
+}
+
+.day-card strong {
+  font-size: 2.05rem;
+}
+
+.note-card {
+  min-height: 68px;
+}
+
+.bars {
+  height: 126px;
+}
+
+.memory-card {
+  min-height: 104px;
+}
+
+.avatar-row span {
+  width: 62px;
+}
+
+.phone-stack {
+  width: min(100%, 300px);
+}
+
+@media (max-width: 760px) {
+  .phone-rail {
+    grid-auto-columns: minmax(270px, 80vw);
+  }
+
+  .phone-frame {
+    width: min(100%, 286px);
+    min-height: 590px;
+  }
+
+  .phone-screen {
+    padding-top: 70px;
+  }
+}
