@@ -4,6 +4,7 @@ import { initMagneticButtons } from "./magnetic-button.js";
 import { initProjectCarousel } from "./project-carousel.js";
 import { initProjectDetail } from "./project-detail.js";
 import { initTheme } from "./theme.js";
+import { initCopyEmail, initScrollProgress, initSpotlight } from "./page-effects.js";
 
 function init() {
   initTheme();
@@ -12,6 +13,9 @@ function init() {
   initMagneticButtons();
   initProjectCarousel();
   initProjectDetail();
+  initScrollProgress();
+  initSpotlight();
+  initCopyEmail();
 }
 
 init();

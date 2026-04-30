@@ -3,6 +3,18 @@
   margin-inline: auto;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8db39b, #4759ff, #d879a4);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
 .skip-link {
   position: fixed;
   left: 18px;
@@ -121,7 +133,19 @@
 
 @media (max-width: 680px) {
   .section-shell { width: min(var(--max-width), calc(100% - 28px)); }
-  .skip-link {
+  .scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8db39b, #4759ff, #d879a4);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.skip-link {
   position: fixed;
   left: 18px;
   top: 18px;

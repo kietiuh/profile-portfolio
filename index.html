@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="src/styles/main.css" />
 </head>
 <body>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
   <a class="skip-link" href="#projects">Skip to projects</a>
   <header class="site-header" aria-label="Thanh điều hướng chính">
     <a class="brand" href="#top" aria-label="Về đầu trang">Aster</a>
@@ -127,13 +128,17 @@
         <p>
           Từ ý tưởng ban đầu đến prototype chỉn chu, mọi thứ bắt đầu bằng một cuộc trò chuyện rõ ràng.
         </p>
-        <a class="contact-button" href="mailto:hello@example.dev" data-magnetic>Get in Touch <span aria-hidden="true">→</span></a>
+        <div class="contact-actions">
+          <a class="contact-button" href="mailto:hello@example.dev" data-magnetic>Get in Touch <span aria-hidden="true">→</span></a>
+          <button class="copy-button" type="button" data-copy-email="hello@example.dev">Copy Email</button>
+        </div>
         <p class="footer-note">Crafted as a private portfolio concept. HTML and CSS only.</p>
       </div>
     </section>
   </main>
 
   <div class="project-detail" data-project-detail aria-hidden="true"></div>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
   <script type="module" src="src/scripts/main.js"></script>
 </body>
 </html>
