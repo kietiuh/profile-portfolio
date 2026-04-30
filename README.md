@@ -1,8 +1,10 @@
-# Profile Portfolio — Awwwards-Level Vanilla Experience
+# Profile Portfolio — Production-Grade Vanilla Experience
 
-A multi-page, highly interactive portfolio concept built with vanilla HTML, modular CSS, and ES modules. The project intentionally avoids a framework rewrite while adding premium motion, seamless navigation, data-driven rendering, and rich interaction patterns.
+A premium, multi-page portfolio built with vanilla HTML, modular CSS, and ES modules. The codebase is structured to keep content, rendering, interaction logic, and styling separate while still delivering Awwwards-inspired motion and polish.
 
-## Live Routes
+Repo: <https://github.com/kietiuh/profile-portfolio>
+
+## Routes
 
 ```txt
 /             Home / product-launch landing page
@@ -10,66 +12,52 @@ A multi-page, highly interactive portfolio concept built with vanilla HTML, modu
 /process.html Product Process Playbook
 ```
 
-## Experience Highlights
-
-- Seamless PJAX-style navigation with native View Transitions API progressive enhancement.
-- Vanilla smooth scrolling engine for desktop/fine-pointer devices.
-- Interactive hero canvas atmosphere reacting to pointer movement.
-- Word-level title reveals, scroll reveal, parallax headings, and showcase scrub variables.
-- Data-driven home highlights, app showcase, project drawer, and Work Lab cards from `src/data/projects.js`.
-- Premium phone mockup carousel with center focus, accent glow, and project detail drawer.
-- Work Lab masonry-style cards with smooth filtering, live counts, expandable notes, and stack tags.
-- Process Playbook with accessible keyboard tabs and persistent readiness checklist.
-- Light/dark theme persistence, copy-email toast, scroll progress, spotlight cards, and reduced-motion fallbacks.
-
 ## Architecture
 
 ```txt
-index.html
-work.html
-process.html
-MASTER_PLAN.md
-README.md
-favicon.svg
-robots.txt
-sitemap.xml
-
-src/
-  data/
-    projects.js
-
-  scripts/
-    main.js              # entrypoint
-    app-init.js          # route lifecycle orchestration
-    router.js            # PJAX + View Transitions
-    smooth-scroll.js     # vanilla smooth scroll engine
-    hero-canvas.js       # interactive canvas atmosphere
-    render-home.js       # home data-driven sections
-    render-projects.js   # phone showcase renderer
-    render-work.js       # Work Lab renderer
-    project-carousel.js  # carousel center-focus/accent state
-    project-detail.js    # project detail drawer
-    page-interactions.js # filters, accordions, tabs, checklist
-    page-effects.js      # progress, spotlight, copy toast
-    magnetic-button.js
-    scroll-reveal.js
-    theme.js
-
-  styles/
-    main.css
-    base.css
-    layout.css
-    components.css
-    animations.css
-    sections/
-      hero.css
-      projects.css
-      project-detail.css
-      skills.css
-      contact.css
-      story.css
-      pages.css
+src/data/projects.js              # Single content source for projects
+src/scripts/main.js               # Boot entrypoint
+src/scripts/app-init.js           # Global + per-route lifecycle orchestration
+src/scripts/router.js             # PJAX-style navigation + View Transitions
+src/scripts/render-*.js           # Data-to-DOM renderers
+src/scripts/utils/dom.js          # DOM and escaping helpers
+src/scripts/utils/project-schema.js # Runtime project validation
+src/styles/base.css               # Design tokens, theme variables, global primitives
+src/styles/sections/*.css         # Section-scoped styling
 ```
+
+### Data Flow
+
+```txt
+projects.js
+  ├─ render-home.js      → hero pills + story cards
+  ├─ render-projects.js  → phone showcase
+  ├─ render-work.js      → Work Lab cards
+  └─ project-detail.js   → detail drawer lookup
+```
+
+`app-init.js` re-runs route-safe modules after PJAX navigation. Renderers use validated project data and escape user-facing strings before injecting HTML.
+
+## Experience Highlights
+
+- PJAX-style route transitions with View Transitions API enhancement.
+- Desktop-only smooth scroll with mobile and reduced-motion guards.
+- Interactive hero canvas atmosphere.
+- Split-word reveals, parallax headings, and showcase scroll effects.
+- Balanced, centered project showcase cards.
+- Data-driven Work Lab with filtering, live counts, stack tags, and expandable notes.
+- Process tabs with keyboard support and persistent checklist progress.
+- Light/dark theme persistence, scroll progress, spotlight cards, copy-email toast.
+- Native cursor UX restored for accessibility and comfort.
+
+## Scaling the Project
+
+1. **Add projects in one place:** update `src/data/projects.js`.
+2. **Respect the schema:** every project needs the fields checked by `src/scripts/utils/project-schema.js` and `tools/lint-check.js`.
+3. **Keep rendering modular:** add/adjust renderer modules instead of duplicating HTML across pages.
+4. **Use event delegation:** dynamic sections should attach one listener to a stable parent.
+5. **Use design tokens:** prefer variables in `src/styles/base.css` for color, spacing, glass, motion, and focus states.
+6. **Run quality gates before pushing.**
 
 ## Run Locally
 
@@ -85,27 +73,24 @@ http://127.0.0.1:8765/work.html
 http://127.0.0.1:8765/process.html
 ```
 
-## Quality Gates Used
+## Quality Gates
 
-Before feature commits, the project was checked with:
+```bash
+node tools/lint-check.js
+```
+
+Manual smoke checks used during development:
 
 ```bash
 curl -fsS http://127.0.0.1:8765/
 curl -fsS http://127.0.0.1:8765/work.html
 curl -fsS http://127.0.0.1:8765/process.html
-node --check src/scripts/*.js
-node --check src/data/*.js
 ```
-
-Additional scripted checks verify:
-
-- local HTML `href/src` references exist
-- CSS brace counts match
-- routes and static assets load
-- no old corrective/dead markers remain
 
 ## Notes
 
-- No npm dependencies are required.
-- `hello@example.dev` and `https://example.dev` are placeholders until a real email/domain is provided.
-- Motion-heavy features are progressively enhanced and respect `prefers-reduced-motion` where appropriate.
+- No npm install is required.
+- Placeholder values remain until real production contact/domain details are provided:
+  - `hello@example.dev`
+  - `https://example.dev`
+- Motion features are progressively enhanced and include reduced-motion fallbacks where appropriate.

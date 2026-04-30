@@ -1,32 +1,33 @@
-# Profile Portfolio Upgrade Roadmap
+# Roadmap & Technical Debt
 
-Goal: turn the static Apple-esque landing page into a richer interactive product portfolio while keeping it maintainable, performant, and tasteful.
+## Completed
 
-Quality gate before every commit:
-- Local page loads through dev/static server.
-- HTML, CSS, and JS files are reachable.
-- Basic syntax check for JavaScript when JS exists.
-- Git status reviewed before commit.
+- [x] Multi-page vanilla architecture: Home, Work, Process.
+- [x] Data-driven project rendering from `src/data/projects.js`.
+- [x] Seamless PJAX-style route transitions with View Transitions progressive enhancement.
+- [x] Desktop-only smooth scroll with reduced-motion/mobile guards.
+- [x] Interactive hero canvas atmosphere.
+- [x] Advanced reveal/parallax/scrub effects.
+- [x] Native cursor restored for better UX.
+- [x] Work Lab masonry-style filtering and expandable case notes.
+- [x] CSS token centralization for core colors, glass, motion, spacing, and focus primitives.
+- [x] Project schema checker and renderer hardening with escaped HTML output.
+- [x] Route re-init idempotency for major interaction modules.
+- [x] Project-specific automated lint script in `tools/lint-check.js`.
 
-## Tasks
+## Future Technical Debt
 
-- [x] 01. Add roadmap/task tracker and quality checklist.
-- [x] 02. Introduce JavaScript architecture and data-driven project rendering.
-- [x] 03. Refactor CSS into section files for maintainability.
-- [x] 04. Add scroll reveal motion system with reduced-motion support.
-- [x] 05. Upgrade hero with richer product-launch motion and floating chips.
-- [ ] 06. Add interactive magnetic CTA and refined button micro-interactions.
-- [x] 07. Upgrade phone mockups and in-phone UI details.
-- [x] 08. Add carousel center-focus behavior and project accent state.
-- [x] 09. Add project detail drawer/modal with keyboard support.
-- [x] 10. Add case study/storytelling sections.
-- [x] 11. Add process/philosophy section.
-- [x] 12. Add metrics/design principles section.
-- [x] 13. Add light/dark theme system with persistence.
-- [x] 14. Add scroll progress indicator.
-- [x] 15. Add cursor spotlight/glass card interaction.
-- [x] 16. Add copy email toast interaction.
-- [x] 17. Add SEO/social metadata, favicon, robots, sitemap.
-- [x] 18. Keep no-dependency quality gates; no extra tooling installed without approval.
-- [x] 19. Final responsive/accessibility/performance pass.
-- [x] 20. Final documentation and project summary.
+- [ ] Add browser-level visual regression checks with Playwright before large visual changes.
+- [ ] Replace custom smooth scroll with native CSS where acceptable, or with a battle-tested engine if production analytics justify it.
+- [ ] Split `projects.css` into smaller BEM-oriented files if the showcase grows beyond the current scope.
+- [ ] Add real production assets and replace placeholder contact/domain values.
+- [ ] Add Lighthouse CI once deployed.
+- [ ] Add unit tests for schema validation and route lifecycle if the site evolves into a larger product.
+
+## Scaling Rules
+
+1. Add project content only in `src/data/projects.js`.
+2. Add rendering behavior in `src/scripts/render-*.js`, not inline HTML.
+3. Add reusable helpers under `src/scripts/utils/`.
+4. Prefer event delegation for dynamic sections.
+5. Use tokens from `src/styles/base.css` before introducing new raw colors/timings.
