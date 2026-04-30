@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="src/styles/main.css" />
 </head>
 <body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
   <header class="site-header" aria-label="Thanh điều hướng chính">
     <a class="brand" href="#top" aria-label="Về đầu trang">Aster</a>
     <nav class="nav-links" aria-label="Liên kết trong trang">
@@ -29,7 +30,10 @@
       <p class="hero-copy reveal-up reveal-delay-2">
         Một portfolio tối giản dành cho những sản phẩm mobile có cảm giác tinh tế, nhanh và thân thuộc — như lần đầu mở một thiết bị mới.
       </p>
-      <a class="hero-cta reveal-up reveal-delay-3" href="#projects">Explore the work</a>
+      <div class="hero-actions reveal-up reveal-delay-3">
+        <a class="hero-cta" href="#projects">Explore the work</a>
+        <span class="micro-note">No noise. No clutter. Just product clarity.</span>
+      </div>
     </section>
 
     <section id="projects" class="projects section-shell" aria-labelledby="projects-title">
@@ -41,6 +45,7 @@
         </p>
       </div>
 
+      <div class="scroll-hint" aria-hidden="true">Scroll sideways to browse</div>
       <div class="phone-rail" aria-label="Danh sách dự án dạng màn hình điện thoại">
         <article class="phone-card phone-card--mori">
           <div class="phone-frame">
@@ -104,6 +109,7 @@
           Từ ý tưởng ban đầu đến prototype chỉn chu, mọi thứ bắt đầu bằng một cuộc trò chuyện rõ ràng.
         </p>
         <a class="contact-button" href="mailto:hello@example.dev">Get in Touch</a>
+        <p class="footer-note">Crafted as a private portfolio concept. HTML and CSS only.</p>
       </div>
     </section>
   </main>
