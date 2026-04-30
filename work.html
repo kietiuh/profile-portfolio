@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Case studies and interactive product work lab for the profile portfolio." />
+  <title>Work — Profile Portfolio</title>
+  <meta name="theme-color" content="#f5f5f7" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="src/styles/main.css" />
+</head>
+<body>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+  <a class="skip-link" href="#work-lab">Skip to work lab</a>
+  <header class="site-header" aria-label="Thanh điều hướng chính">
+    <a class="brand" href="index.html#top" aria-label="Về trang chủ">Aster</a>
+    <nav class="nav-links" aria-label="Liên kết trang">
+      <a href="index.html#projects">Home</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="process.html">Process</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle color theme">Dark</button>
+  </header>
+
+  <main>
+    <section class="page-hero section-shell" aria-labelledby="work-title">
+      <p class="eyebrow reveal-up">Interactive Work Lab</p>
+      <h1 id="work-title" class="page-title reveal-up reveal-delay-1">Explore the product decisions behind each concept.</h1>
+      <p class="page-copy reveal-up reveal-delay-2">Filter the projects, open the case notes, and compare how each product balances clarity, motion, and trust.</p>
+    </section>
+
+    <section id="work-lab" class="work-lab section-shell" aria-labelledby="lab-title">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Case Studies</p>
+        <h2 id="lab-title">Choose a lens.</h2>
+        <p>Use filters to focus on a product type, then expand each card for role, challenge, and outcome.</p>
+      </div>
+
+      <div class="filter-bar" data-filter-group aria-label="Project filters">
+        <button type="button" class="filter-button is-active" data-filter="all">All</button>
+        <button type="button" class="filter-button" data-filter="wellness">Wellness</button>
+        <button type="button" class="filter-button" data-filter="fintech">Fintech</button>
+        <button type="button" class="filter-button" data-filter="social">Social</button>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card" data-category="wellness" data-reveal>
+          <span class="case-kicker">Wellness Planner</span>
+          <h3>Mori Planning</h3>
+          <p>Calm productivity system focused on rituals, attention, and low-pressure planning.</p>
+          <button class="case-toggle" type="button" aria-expanded="false">Open case notes</button>
+          <div class="case-notes" hidden>
+            <dl><div><dt>Role</dt><dd>Product UX, mobile interaction, habit system design.</dd></div><div><dt>Key Decision</dt><dd>Reduce task density and use daily rituals as the core navigation model.</dd></div></dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-category="fintech" data-reveal>
+          <span class="case-kicker">Fintech Clarity</span>
+          <h3>Tranx</h3>
+          <p>Transaction experience built around visible states, trust, and fast comprehension.</p>
+          <button class="case-toggle" type="button" aria-expanded="false">Open case notes</button>
+          <div class="case-notes" hidden>
+            <dl><div><dt>Role</dt><dd>Information architecture, financial UI states, interaction feedback.</dd></div><div><dt>Key Decision</dt><dd>Make every transaction status visually explicit before adding analytics.</dd></div></dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-category="social" data-reveal>
+          <span class="case-kicker">Private Social</span>
+          <h3>Together+</h3>
+          <p>A quieter shared space for groups that need planning, memories, and presence.</p>
+          <button class="case-toggle" type="button" aria-expanded="false">Open case notes</button>
+          <div class="case-notes" hidden>
+            <dl><div><dt>Role</dt><dd>Group UX, emotional tone, prototype motion design.</dd></div><div><dt>Key Decision</dt><dd>Avoid an infinite feed and prioritize small intentional moments.</dd></div></dl>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <script type="module" src="src/scripts/main.js"></script>
+</body>
+</html>
