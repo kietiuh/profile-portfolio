@@ -7,6 +7,7 @@ import { initProjectCarousel } from "./project-carousel.js";
 import { initProjectDetail } from "./project-detail.js";
 import { initTheme } from "./theme.js";
 import { initPageInteractions } from "./page-interactions.js";
+import { initHeroCanvas } from "./hero-canvas.js";
 import { initCopyEmail, initScrollProgress, initSpotlight } from "./page-effects.js";
 import { initSmoothScroll, refreshSmoothScroll } from "./smooth-scroll.js";
 
@@ -31,6 +32,7 @@ export function initPage() {
   initSpotlight();
   initCopyEmail();
   initPageInteractions();
+  initHeroCanvas();
   refreshSmoothScroll();
   document.dispatchEvent(new CustomEvent("portfolio:page-ready"));
 }
