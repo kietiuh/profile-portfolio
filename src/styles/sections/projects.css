@@ -22,7 +22,7 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   color: #86868b;
-  background: rgba(255,255,255,.54);
+  background: var(--pill-bg);
   font-size: .84rem;
   font-weight: 650;
 }
@@ -77,7 +77,7 @@
   border-radius: 42px;
   background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(223,224,229,.88));
   box-shadow: var(--shadow-soft);
-  transition: transform 260ms ease, box-shadow 260ms ease, opacity 260ms ease, filter 260ms ease;
+  transition: transform var(--duration-med) ease, box-shadow var(--duration-med) ease, opacity var(--duration-med) ease, filter var(--duration-med) ease;
 }
 
 .phone-frame::before {
@@ -107,7 +107,7 @@
 }
 
 .phone-button:focus-visible .phone-frame {
-  outline: 3px solid rgba(0, 113, 227, .36);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 6px;
 }
 
@@ -230,7 +230,7 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   color: #86868b;
-  background: rgba(255,255,255,.54);
+  background: var(--pill-bg);
   font-size: .78rem;
   font-weight: 650;
 }

@@ -19,7 +19,7 @@
 
 .reveal-up {
   opacity: 0;
-  animation: reveal-up 800ms cubic-bezier(.2,.8,.2,1) forwards;
+  animation: reveal-up 800ms var(--ease-premium) forwards;
 }
 
 .reveal-delay-1 { animation-delay: 110ms; }
@@ -42,9 +42,9 @@
   transform: translateY(24px);
   filter: blur(10px);
   transition:
-    opacity 760ms cubic-bezier(.2,.8,.2,1),
-    transform 760ms cubic-bezier(.2,.8,.2,1),
-    filter 760ms cubic-bezier(.2,.8,.2,1);
+    opacity 760ms var(--ease-premium),
+    transform 760ms var(--ease-premium),
+    filter 760ms var(--ease-premium);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -64,8 +64,8 @@
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 520ms;
-  animation-timing-function: cubic-bezier(.2,.8,.2,1);
+  animation-duration: var(--duration-slow);
+  animation-timing-function: var(--ease-premium);
 }
 
 ::view-transition-old(root) {
@@ -97,7 +97,7 @@
 [data-split] .word > span {
   display: inline-block;
   transform: translateY(110%) rotate(2deg);
-  animation: word-rise 980ms cubic-bezier(.16,1,.3,1) forwards;
+  animation: word-rise 980ms var(--ease-out-soft) forwards;
   animation-delay: calc(var(--word-index, 0) * 34ms + 120ms);
 }
 

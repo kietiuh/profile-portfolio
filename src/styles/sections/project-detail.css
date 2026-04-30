@@ -32,12 +32,12 @@
   padding: clamp(28px, 5vw, 52px);
   border: 1px solid rgba(255,255,255,.88);
   border-radius: 36px;
-  background: rgba(255,255,255,.82);
+  background: var(--glass-border);
   backdrop-filter: blur(28px) saturate(1.35);
   box-shadow: 0 32px 120px rgba(29,29,31,.22);
   opacity: 0;
   transform: translateX(24px) scale(.98);
-  transition: transform 260ms cubic-bezier(.2,.8,.2,1), opacity 260ms ease;
+  transition: transform 260ms var(--ease-premium), opacity var(--duration-med) ease;
 }
 
 .project-detail.is-open .detail-panel {

@@ -13,7 +13,7 @@
   padding: 16px 22px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255,255,255,.54);
+  background: var(--pill-bg);
   color: var(--muted);
   font-weight: 650;
   white-space: nowrap;
