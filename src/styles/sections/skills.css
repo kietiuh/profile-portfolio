@@ -1,0 +1,20 @@
+.ticker {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  animation: ticker-scroll 28s linear infinite;
+}
+
+.ticker-track span {
+  padding: 16px 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.54);
+  color: var(--muted);
+  font-weight: 650;
+  white-space: nowrap;
+}

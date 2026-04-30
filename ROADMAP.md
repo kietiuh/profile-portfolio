@@ -11,7 +11,7 @@ Quality gate before every commit:
 ## Tasks
 
 - [x] 01. Add roadmap/task tracker and quality checklist.
-- [ ] 02. Introduce JavaScript architecture and data-driven project rendering.
+- [x] 02. Introduce JavaScript architecture and data-driven project rendering.
 - [ ] 03. Refactor CSS into section files for maintainability.
 - [ ] 04. Add scroll reveal motion system with reduced-motion support.
 - [ ] 05. Upgrade hero with richer product-launch motion and floating chips.

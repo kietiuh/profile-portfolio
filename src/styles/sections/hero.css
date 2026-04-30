@@ -1,0 +1,88 @@
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero > *:not(.ambient-orb) {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  max-width: 1050px;
+  margin-top: 18px;
+  font-size: clamp(4rem, 13vw, 10.6rem);
+  font-weight: 650;
+}
+
+.hero-copy {
+  max-width: 680px;
+  margin: 28px auto 0;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 2vw, 1.32rem);
+}
+
+.hero-actions {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.micro-note {
+  color: #86868b;
+  font-size: .92rem;
+}
+
+.hero-cta,
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  margin-top: 34px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--text);
+  color: white;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.hero-cta:hover,
+.contact-button:hover {
+  transform: translateY(-2px);
+  background: #333336;
+  box-shadow: 0 18px 50px rgba(29, 29, 31, 0.16);
+}
+
+.ambient-orb {
+  position: absolute;
+  width: 52vw;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  filter: blur(42px);
+  opacity: .46;
+  animation: float-gradient 18s ease-in-out infinite alternate;
+}
+
+.ambient-orb--one {
+  left: -18vw;
+  top: 8vh;
+  background: radial-gradient(circle, #d9e6ff, transparent 62%);
+}
+
+.ambient-orb--two {
+  right: -20vw;
+  bottom: 5vh;
+  background: radial-gradient(circle, #ffe3ef, transparent 64%);
+  animation-delay: -7s;
+}
+
+@media (max-width: 680px) {
+  .hero-title { font-size: clamp(3.5rem, 18vw, 6.2rem); }
+  .hero-copy { font-size: 1rem; }
+}
