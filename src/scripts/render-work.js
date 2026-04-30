@@ -2,7 +2,7 @@ import { projects } from "../data/projects.js";
 
 function caseCardTemplate(project) {
   return `
-    <article class="case-card" data-category="${project.category}" data-reveal>
+    <article class="case-card" data-category="${project.category}" data-cursor-label="Read" data-reveal>
       <span class="case-kicker">${project.type}</span>
       <h3>${project.name}</h3>
       <p>${project.description}</p>
