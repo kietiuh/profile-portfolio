@@ -1,0 +1,123 @@
+.detail-open {
+  overflow: hidden;
+}
+
+.project-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.project-detail.is-open { pointer-events: auto; }
+
+.detail-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(29,29,31,.18);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.project-detail.is-open .detail-backdrop { opacity: 1; }
+
+.detail-panel {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  bottom: 18px;
+  width: min(520px, calc(100% - 36px));
+  overflow: auto;
+  padding: clamp(28px, 5vw, 52px);
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 36px;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(28px) saturate(1.35);
+  box-shadow: 0 32px 120px rgba(29,29,31,.22);
+  opacity: 0;
+  transform: translateX(24px) scale(.98);
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), opacity 260ms ease;
+}
+
+.project-detail.is-open .detail-panel {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.detail-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.72);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.detail-panel h2 {
+  margin-top: 12px;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+}
+
+.detail-tagline {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 1.16rem;
+}
+
+.detail-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.detail-stack span {
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.66);
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 650;
+}
+
+.detail-list {
+  display: grid;
+  gap: 18px;
+  margin: 34px 0 0;
+}
+
+.detail-list div {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.detail-list dt {
+  color: var(--text);
+  font-weight: 760;
+}
+
+.detail-list dd {
+  margin: 7px 0 0;
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .detail-panel {
+  background: rgba(24,25,31,.88);
+  border-color: rgba(255,255,255,.14);
+}
+
+@media (max-width: 680px) {
+  .detail-panel {
+    inset: auto 10px 10px;
+    width: auto;
+    max-height: 82vh;
+    border-radius: 30px;
+  }
+}
