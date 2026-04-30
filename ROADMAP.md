@@ -18,7 +18,7 @@ Quality gate before every commit:
 - [ ] 06. Add interactive magnetic CTA and refined button micro-interactions.
 - [x] 07. Upgrade phone mockups and in-phone UI details.
 - [x] 08. Add carousel center-focus behavior and project accent state.
-- [ ] 09. Add project detail drawer/modal with keyboard support.
+- [x] 09. Add project detail drawer/modal with keyboard support.
 - [ ] 10. Add case study/storytelling sections.
 - [ ] 11. Add process/philosophy section.
 - [ ] 12. Add metrics/design principles section.
