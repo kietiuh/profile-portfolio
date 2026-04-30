@@ -2,14 +2,30 @@ import { projects } from "../data/projects.js";
 
 function renderWidget(type) {
   if (type === "chart") {
-    return `<div class="screen-widget widget-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>`;
+    return `
+      <div class="screen-widget widget-chart" aria-hidden="true">
+        <div class="balance-card"><span>Balance</span><strong>$12,840</strong></div>
+        <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="transaction-row"><span></span><b></b></div>
+      </div>`;
   }
 
   if (type === "people") {
-    return `<div class="screen-widget widget-people" aria-hidden="true"><span></span><span></span><span></span></div>`;
+    return `
+      <div class="screen-widget widget-people" aria-hidden="true">
+        <div class="avatar-row"><span></span><span></span><span></span></div>
+        <div class="memory-card"></div>
+        <div class="timeline-card"><i></i><i></i><i></i></div>
+      </div>`;
   }
 
-  return `<div class="screen-widget widget-calendar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>`;
+  return `
+    <div class="screen-widget widget-calendar" aria-hidden="true">
+      <div class="day-card"><strong>07</strong><span>Focus</span></div>
+      <div class="habit-rings"><i></i><i></i></div>
+      <div class="note-card"></div>
+      <div class="mini-grid"><span></span><span></span><span></span></div>
+    </div>`;
 }
 
 function projectTemplate(project) {
