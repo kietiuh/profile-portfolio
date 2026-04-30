@@ -1,4 +1,5 @@
 import { renderProjects } from "./render-projects.js";
+import { renderWorkCases } from "./render-work.js";
 import { initScrollReveal } from "./scroll-reveal.js";
 import { initMagneticButtons } from "./magnetic-button.js";
 import { initProjectCarousel } from "./project-carousel.js";
@@ -10,6 +11,7 @@ import { initCopyEmail, initScrollProgress, initSpotlight } from "./page-effects
 function init() {
   initTheme();
   renderProjects();
+  renderWorkCases();
   initScrollReveal();
   initMagneticButtons();
   initProjectCarousel();
