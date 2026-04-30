@@ -61,3 +61,29 @@
     filter: none;
   }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 520ms;
+  animation-timing-function: cubic-bezier(.2,.8,.2,1);
+}
+
+::view-transition-old(root) {
+  animation-name: route-out;
+}
+
+::view-transition-new(root) {
+  animation-name: route-in;
+}
+
+@keyframes route-out {
+  to { opacity: 0; transform: translateY(-10px) scale(.992); filter: blur(8px); }
+}
+
+@keyframes route-in {
+  from { opacity: 0; transform: translateY(18px) scale(.992); filter: blur(10px); }
+}
+
+.is-routing {
+  cursor: progress;
+}
