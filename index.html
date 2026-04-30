@@ -3,71 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nyx Starter Site</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Portfolio tối giản lấy cảm hứng từ Apple, trưng bày các sản phẩm mobile và kỹ năng phát triển." />
+  <title>Profile Portfolio — Apple-esque Minimalism</title>
+  <link rel="stylesheet" href="src/styles/main.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <a class="logo" href="#">Nyx</a>
-      <div class="links">
-        <a href="#features">Tính năng</a>
-        <a href="#work">Demo</a>
-        <a href="#contact">Liên hệ</a>
-      </div>
+  <header class="site-header" aria-label="Thanh điều hướng chính">
+    <a class="brand" href="#top" aria-label="Về đầu trang">Aster</a>
+    <nav class="nav-links" aria-label="Liên kết trong trang">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
-
-    <section class="hero-content">
-      <p class="eyebrow">HTML + CSS starter</p>
-      <h1>Một landing page gọn, đẹp, sẵn sàng chỉnh tiếp.</h1>
-      <p class="subtitle">
-        Dùng làm nền để phát triển trang giới thiệu sản phẩm, portfolio hoặc dự án nhỏ.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="#features">Xem tính năng</a>
-        <a class="button secondary" href="#work">Xem demo</a>
-      </div>
-    </section>
   </header>
 
-  <main>
-    <section id="features" class="section grid">
-      <article class="card">
-        <span class="icon">⚡</span>
-        <h2>Nhanh</h2>
-        <p>Không framework, chỉ HTML/CSS thuần nên nhẹ và dễ deploy.</p>
-      </article>
-      <article class="card">
-        <span class="icon">🎨</span>
-        <h2>Đẹp</h2>
-        <p>Layout hiện đại với gradient, card, spacing rõ ràng và responsive.</p>
-      </article>
-      <article class="card">
-        <span class="icon">🛠️</span>
-        <h2>Dễ sửa</h2>
-        <p>Cấu trúc file đơn giản để bạn thay nội dung, màu sắc, section nhanh.</p>
-      </article>
+  <main id="top">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="ambient-orb ambient-orb--one" aria-hidden="true"></div>
+      <div class="ambient-orb ambient-orb--two" aria-hidden="true"></div>
+
+      <p class="eyebrow reveal-up">Independent Mobile Product Studio</p>
+      <h1 id="hero-title" class="hero-title reveal-up reveal-delay-1">
+        Designed quietly.<br />Built precisely.
+      </h1>
+      <p class="hero-copy reveal-up reveal-delay-2">
+        Một portfolio tối giản dành cho những sản phẩm mobile có cảm giác tinh tế, nhanh và thân thuộc — như lần đầu mở một thiết bị mới.
+      </p>
+      <a class="hero-cta reveal-up reveal-delay-3" href="#projects">Explore the work</a>
     </section>
 
-    <section id="work" class="section showcase">
-      <div>
-        <p class="eyebrow">Demo section</p>
-        <h2>Trang đã có khung cơ bản</h2>
+    <section id="projects" class="projects section-shell" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <p class="eyebrow">App Showcase</p>
+        <h2 id="projects-title">Three ideas, framed like devices.</h2>
         <p>
-          Có hero, navigation, feature cards, phần giới thiệu và footer. Bước tiếp theo là đổi nội dung theo mục đích thật của bạn.
+          Mỗi dự án được đặt trong một màn hình dọc với scroll snap, soft hover và layout tập trung vào cảm giác sản phẩm.
         </p>
       </div>
-      <div class="mockup">
-        <div class="dot-row"><span></span><span></span><span></span></div>
-        <div class="mock-line wide"></div>
-        <div class="mock-line"></div>
-        <div class="mock-line short"></div>
+
+      <div class="phone-rail" aria-label="Danh sách dự án dạng màn hình điện thoại">
+        <article class="phone-card phone-card--mori">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <span class="status-pill">Mori Planning</span>
+              <h3>Plan calm days with gentle rituals.</h3>
+              <p>Lịch cá nhân, thói quen và không gian ghi chú yên tĩnh cho người thích sống có nhịp.</p>
+              <div class="screen-widget widget-calendar" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="phone-card phone-card--tranx">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <span class="status-pill">Tranx</span>
+              <h3>Move money with total clarity.</h3>
+              <p>Giao diện tài chính gọn, rõ ràng, ưu tiên trạng thái giao dịch và cảm giác tin cậy.</p>
+              <div class="screen-widget widget-chart" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="phone-card phone-card--together">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <span class="status-pill">Together+</span>
+              <h3>Shared moments, beautifully synced.</h3>
+              <p>Một nơi nhẹ nhàng để nhóm nhỏ lên kế hoạch, chia sẻ khoảnh khắc và giữ kết nối.</p>
+              <div class="screen-widget widget-people" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills" aria-labelledby="skills-title">
+      <div class="section-shell section-heading compact">
+        <p class="eyebrow">Core Technology</p>
+        <h2 id="skills-title">Built with tools that stay out of the way.</h2>
+      </div>
+      <div class="ticker" aria-label="Danh sách công nghệ chạy ngang">
+        <div class="ticker-track">
+          <span>React Native</span><span>Kotlin</span><span>Flutter</span><span>SwiftUI</span><span>TypeScript</span><span>Firebase</span><span>Design Systems</span><span>Accessibility</span>
+          <span>React Native</span><span>Kotlin</span><span>Flutter</span><span>SwiftUI</span><span>TypeScript</span><span>Firebase</span><span>Design Systems</span><span>Accessibility</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-shell" aria-labelledby="contact-title">
+      <div class="glass-card">
+        <p class="eyebrow">Available for thoughtful builds</p>
+        <h2 id="contact-title">Let’s shape a product that feels inevitable.</h2>
+        <p>
+          Từ ý tưởng ban đầu đến prototype chỉn chu, mọi thứ bắt đầu bằng một cuộc trò chuyện rõ ràng.
+        </p>
+        <a class="contact-button" href="mailto:hello@example.dev">Get in Touch</a>
       </div>
     </section>
   </main>
-
-  <footer id="contact" class="footer">
-    <p>© 2026 Nyx Starter Site. Built with plain HTML & CSS.</p>
-  </footer>
 </body>
 </html>
