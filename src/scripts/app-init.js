@@ -8,7 +8,6 @@ import { initProjectDetail } from "./project-detail.js";
 import { initTheme } from "./theme.js";
 import { initPageInteractions } from "./page-interactions.js";
 import { initHeroCanvas } from "./hero-canvas.js";
-import { initCursor } from "./cursor.js";
 import { initCopyEmail, initScrollProgress, initSpotlight } from "./page-effects.js";
 import { initSmoothScroll, refreshSmoothScroll } from "./smooth-scroll.js";
 
@@ -18,7 +17,6 @@ export function initPage() {
   if (!booted) {
     initTheme();
     initSmoothScroll();
-    initCursor();
     booted = true;
   }
 

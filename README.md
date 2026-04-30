@@ -16,7 +16,6 @@ A multi-page, highly interactive portfolio concept built with vanilla HTML, modu
 - Vanilla smooth scrolling engine for desktop/fine-pointer devices.
 - Interactive hero canvas atmosphere reacting to pointer movement.
 - Word-level title reveals, scroll reveal, parallax headings, and showcase scrub variables.
-- Morphing custom cursor with contextual labels such as `View`, `Read`, and `Enter`.
 - Data-driven home highlights, app showcase, project drawer, and Work Lab cards from `src/data/projects.js`.
 - Premium phone mockup carousel with center focus, accent glow, and project detail drawer.
 - Work Lab masonry-style cards with smooth filtering, live counts, expandable notes, and stack tags.
@@ -45,7 +44,6 @@ src/
     router.js            # PJAX + View Transitions
     smooth-scroll.js     # vanilla smooth scroll engine
     hero-canvas.js       # interactive canvas atmosphere
-    cursor.js            # morphing cursor
     render-home.js       # home data-driven sections
     render-projects.js   # phone showcase renderer
     render-work.js       # Work Lab renderer
