@@ -22,7 +22,7 @@ Quality gate before every commit:
 - [x] 10. Add case study/storytelling sections.
 - [x] 11. Add process/philosophy section.
 - [x] 12. Add metrics/design principles section.
-- [ ] 13. Add light/dark theme system with persistence.
+- [x] 13. Add light/dark theme system with persistence.
 - [ ] 14. Add scroll progress indicator.
 - [ ] 15. Add cursor spotlight/glass card interaction.
 - [ ] 16. Add copy email toast interaction.

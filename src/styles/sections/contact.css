@@ -27,3 +27,7 @@
   color: #86868b;
   font-size: .9rem;
 }
+
+:root[data-theme="dark"] .glass-card {
+  background: linear-gradient(145deg, rgba(32,33,40,.82), rgba(20,21,27,.62));
+}
