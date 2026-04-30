@@ -162,3 +162,45 @@
   .case-grid { grid-template-columns: 1fr; }
   .page-hero { padding-top: 86px; }
 }
+
+.filter-count {
+  margin: -8px 0 20px;
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 650;
+}
+
+.readiness-progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(29,29,31,.08);
+}
+
+.readiness-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8db39b, #4759ff, #d879a4);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.reset-checklist {
+  width: fit-content;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.62);
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+}
+
+:root[data-theme="dark"] .readiness-progress {
+  background: rgba(255,255,255,.1);
+}
