@@ -204,3 +204,59 @@
 :root[data-theme="dark"] .readiness-progress {
   background: rgba(255,255,255,.1);
 }
+
+.site-map {
+  padding: 54px 0 90px;
+}
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.route-card {
+  min-height: 300px;
+  padding: clamp(26px, 5vw, 44px);
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 36px;
+  background: rgba(255,255,255,.58);
+  box-shadow: 0 18px 70px rgba(29,29,31,.08);
+  backdrop-filter: blur(20px) saturate(1.24);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.route-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.route-card span {
+  color: var(--muted);
+  font-weight: 760;
+}
+
+.route-card h3 {
+  margin-top: 34px;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+}
+
+.route-card p {
+  max-width: 480px;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.route-card strong {
+  display: inline-block;
+  margin-top: 28px;
+}
+
+:root[data-theme="dark"] .route-card {
+  background: rgba(24,25,31,.66);
+  border-color: rgba(255,255,255,.12);
+}
+
+@media (max-width: 760px) {
+  .route-grid { grid-template-columns: 1fr; }
+}
