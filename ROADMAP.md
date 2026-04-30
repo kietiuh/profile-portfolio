@@ -28,5 +28,5 @@ Quality gate before every commit:
 - [x] 16. Add copy email toast interaction.
 - [x] 17. Add SEO/social metadata, favicon, robots, sitemap.
 - [x] 18. Keep no-dependency quality gates; no extra tooling installed without approval.
-- [ ] 19. Final responsive/accessibility/performance pass.
-- [ ] 20. Final documentation and project summary.
+- [x] 19. Final responsive/accessibility/performance pass.
+- [x] 20. Final documentation and project summary.
