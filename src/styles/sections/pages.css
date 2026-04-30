@@ -316,3 +316,16 @@
   .case-card:nth-child(2),
   .case-card:nth-child(3) { margin-top: 0; }
 }
+
+@media (max-width: 520px) {
+  .filter-bar,
+  .tab-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-button,
+  .tab-list button {
+    width: 100%;
+  }
+}

@@ -60,6 +60,7 @@ function scrollForUrl(url) {
 async function navigate(url, { history = true } = {}) {
   if (isRouting) return;
   isRouting = true;
+  if (new URL(url, window.location.href).href === window.location.href) return;
   document.documentElement.classList.add("is-routing");
 
   try {
@@ -69,7 +70,7 @@ async function navigate(url, { history = true } = {}) {
     if (document.startViewTransition) await document.startViewTransition(swap).finished;
     else swap();
 
-    if (history) window.history.pushState({ pjax: true }, "", url);
+    if (history) window.history.pushState({ pjax: true, scrollY: 0 }, "", url);
     scrollForUrl(url);
   } catch (error) {
     console.warn(error);

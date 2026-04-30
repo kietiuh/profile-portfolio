@@ -109,3 +109,19 @@
   transform: translate3d(0, var(--parallax-y, 0), 0);
   will-change: transform;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1ms;
+  }
+
+  [data-split] .word > span {
+    animation-duration: 1ms;
+    transform: none;
+  }
+
+  [data-parallax] {
+    transform: none;
+  }
+}

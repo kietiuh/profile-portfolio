@@ -9,7 +9,9 @@ function maxScroll() {
 }
 
 function syncBodyHeight() {
-  document.body.style.minHeight = `${document.documentElement.scrollHeight}px`;
+  const main = document.querySelector("main");
+  const height = main ? main.getBoundingClientRect().height + main.offsetTop : document.documentElement.scrollHeight;
+  document.body.style.minHeight = `${Math.max(window.innerHeight, height)}px`;
 }
 
 function tick() {
@@ -59,7 +61,8 @@ export function refreshSmoothScroll() {
 export function initSmoothScroll() {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const fine = window.matchMedia("(pointer: fine)").matches;
-  enabled = fine && !reduced;
+  const narrow = window.matchMedia("(max-width: 820px)").matches;
+  enabled = fine && !narrow && !reduced;
   document.documentElement.classList.toggle("smooth-scroll-enabled", enabled);
   if (!enabled) return;
 
