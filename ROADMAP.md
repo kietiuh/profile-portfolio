@@ -16,7 +16,7 @@ Quality gate before every commit:
 - [x] 04. Add scroll reveal motion system with reduced-motion support.
 - [x] 05. Upgrade hero with richer product-launch motion and floating chips.
 - [ ] 06. Add interactive magnetic CTA and refined button micro-interactions.
-- [ ] 07. Upgrade phone mockups and in-phone UI details.
+- [x] 07. Upgrade phone mockups and in-phone UI details.
 - [ ] 08. Add carousel center-focus behavior and project accent state.
 - [ ] 09. Add project detail drawer/modal with keyboard support.
 - [ ] 10. Add case study/storytelling sections.
