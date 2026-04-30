@@ -535,3 +535,19 @@
     min-height: 590px;
   }
 }
+
+/* Desktop centering pass: keep the three showcase devices centered as a group. */
+@media (min-width: 1081px) {
+  .phone-rail {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+    width: 100%;
+  }
+
+  .phone-card {
+    flex: 0 0 300px;
+  }
+}
