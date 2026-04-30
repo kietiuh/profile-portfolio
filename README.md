@@ -1,47 +1,62 @@
-# Profile Portfolio
+# Profile Portfolio — Awwwards-Level Vanilla Experience
 
-A private Apple-inspired interactive portfolio concept for mobile product work. The site is built with plain HTML, modular CSS, and lightweight JavaScript modules — no framework or package dependencies required.
+A multi-page, highly interactive portfolio concept built with vanilla HTML, modular CSS, and ES modules. The project intentionally avoids a framework rewrite while adding premium motion, seamless navigation, data-driven rendering, and rich interaction patterns.
 
-## Features
+## Live Routes
 
-- Apple-esque minimal visual direction with whitespace, soft glass, and subtle gradients.
-- Product-launch style hero with reveal motion, floating product chips, and magnetic CTAs.
-- Data-driven app showcase rendered from `src/data/projects.js`.
-- Phone-style project mockups with realistic in-screen UI details.
-- Horizontal scroll snap carousel with center-focus and project accent glow.
-- Interactive project detail drawer with Escape/close support.
-- Multi-page expansion with `work.html` and `process.html`.
-- Work Lab interactions: project filters, live result count, expandable case notes.
-- Process Playbook interactions: accessible tabs, persistent readiness checklist, progress meter.
-- Storytelling sections: case studies, process, and design principles/metrics.
-- Persistent light/dark theme toggle.
-- Scroll progress bar, cursor spotlight, copy-email toast.
-- SEO basics: metadata, favicon, robots, sitemap placeholder.
-- Reduced-motion support for animation-sensitive users.
+```txt
+/             Home / product-launch landing page
+/work.html    Interactive Work Lab
+/process.html Product Process Playbook
+```
 
-## File Structure
+## Experience Highlights
+
+- Seamless PJAX-style navigation with native View Transitions API progressive enhancement.
+- Vanilla smooth scrolling engine for desktop/fine-pointer devices.
+- Interactive hero canvas atmosphere reacting to pointer movement.
+- Word-level title reveals, scroll reveal, parallax headings, and showcase scrub variables.
+- Morphing custom cursor with contextual labels such as `View`, `Read`, and `Enter`.
+- Data-driven home highlights, app showcase, project drawer, and Work Lab cards from `src/data/projects.js`.
+- Premium phone mockup carousel with center focus, accent glow, and project detail drawer.
+- Work Lab masonry-style cards with smooth filtering, live counts, expandable notes, and stack tags.
+- Process Playbook with accessible keyboard tabs and persistent readiness checklist.
+- Light/dark theme persistence, copy-email toast, scroll progress, spotlight cards, and reduced-motion fallbacks.
+
+## Architecture
 
 ```txt
 index.html
 work.html
 process.html
+MASTER_PLAN.md
+README.md
 favicon.svg
 robots.txt
 sitemap.xml
-ROADMAP.md
+
 src/
   data/
     projects.js
+
   scripts/
-    main.js
+    main.js              # entrypoint
+    app-init.js          # route lifecycle orchestration
+    router.js            # PJAX + View Transitions
+    smooth-scroll.js     # vanilla smooth scroll engine
+    hero-canvas.js       # interactive canvas atmosphere
+    cursor.js            # morphing cursor
+    render-home.js       # home data-driven sections
+    render-projects.js   # phone showcase renderer
+    render-work.js       # Work Lab renderer
+    project-carousel.js  # carousel center-focus/accent state
+    project-detail.js    # project detail drawer
+    page-interactions.js # filters, accordions, tabs, checklist
+    page-effects.js      # progress, spotlight, copy toast
     magnetic-button.js
-    page-effects.js
-    page-interactions.js
-    project-carousel.js
-    project-detail.js
-    render-projects.js
     scroll-reveal.js
     theme.js
+
   styles/
     main.css
     base.css
@@ -49,13 +64,13 @@ src/
     components.css
     animations.css
     sections/
-      contact.css
       hero.css
-      pages.css
-      project-detail.css
       projects.css
+      project-detail.css
       skills.css
+      contact.css
       story.css
+      pages.css
 ```
 
 ## Run Locally
@@ -72,13 +87,27 @@ http://127.0.0.1:8765/work.html
 http://127.0.0.1:8765/process.html
 ```
 
-## Quality Gate Used
+## Quality Gates Used
 
-Before commits, the project was checked with:
+Before feature commits, the project was checked with:
 
-- local static server load via `curl`
-- static resource existence checks
-- JavaScript syntax checks with `node --check`
-- git status review before push
+```bash
+curl -fsS http://127.0.0.1:8765/
+curl -fsS http://127.0.0.1:8765/work.html
+curl -fsS http://127.0.0.1:8765/process.html
+node --check src/scripts/*.js
+node --check src/data/*.js
+```
 
-No dependency-based tooling was installed because extra tooling requires explicit approval.
+Additional scripted checks verify:
+
+- local HTML `href/src` references exist
+- CSS brace counts match
+- routes and static assets load
+- no old corrective/dead markers remain
+
+## Notes
+
+- No npm dependencies are required.
+- `hello@example.dev` and `https://example.dev` are placeholders until a real email/domain is provided.
+- Motion-heavy features are progressively enhanced and respect `prefers-reduced-motion` where appropriate.
