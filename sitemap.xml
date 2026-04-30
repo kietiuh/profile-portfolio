@@ -4,4 +4,12 @@
     <loc>https://example.dev/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://example.dev/work.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://example.dev/process.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

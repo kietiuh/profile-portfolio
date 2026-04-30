@@ -10,6 +10,9 @@ A private Apple-inspired interactive portfolio concept for mobile product work. 
 - Phone-style project mockups with realistic in-screen UI details.
 - Horizontal scroll snap carousel with center-focus and project accent glow.
 - Interactive project detail drawer with Escape/close support.
+- Multi-page expansion with `work.html` and `process.html`.
+- Work Lab interactions: project filters, live result count, expandable case notes.
+- Process Playbook interactions: accessible tabs, persistent readiness checklist, progress meter.
 - Storytelling sections: case studies, process, and design principles/metrics.
 - Persistent light/dark theme toggle.
 - Scroll progress bar, cursor spotlight, copy-email toast.
@@ -20,6 +23,8 @@ A private Apple-inspired interactive portfolio concept for mobile product work. 
 
 ```txt
 index.html
+work.html
+process.html
 favicon.svg
 robots.txt
 sitemap.xml
@@ -31,6 +36,7 @@ src/
     main.js
     magnetic-button.js
     page-effects.js
+    page-interactions.js
     project-carousel.js
     project-detail.js
     render-projects.js
@@ -45,6 +51,8 @@ src/
     sections/
       contact.css
       hero.css
+      pages.css
+      project-detail.css
       projects.css
       skills.css
       story.css
@@ -60,6 +68,8 @@ Open:
 
 ```txt
 http://127.0.0.1:8765
+http://127.0.0.1:8765/work.html
+http://127.0.0.1:8765/process.html
 ```
 
 ## Quality Gate Used
