@@ -1,4 +1,5 @@
-import { projects } from "../data/projects.js";
+import { getProjects } from "./utils/project-schema.js";
+import { escapeHtml } from "./utils/dom.js";
 
 function renderWidget(type) {
   if (type === "chart") {
@@ -29,23 +30,23 @@ function renderWidget(type) {
 }
 
 function projectTemplate(project) {
-  const stack = project.stack.map((item) => `<li>${item}</li>`).join("");
+  const stack = project.stack.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
   return `
-    <article class="phone-card phone-card--${project.id}" data-project-id="${project.id}" data-accent="${project.accent}" data-reveal>
-      <button class="phone-button" type="button" aria-label="Xem chi tiết ${project.name}">
+    <article class="phone-card phone-card--${escapeHtml(project.id)}" data-project-id="${escapeHtml(project.id)}" data-accent="${escapeHtml(project.accent)}" data-reveal>
+      <button class="phone-button" type="button" aria-label="Xem chi tiết ${escapeHtml(project.name)}">
         <span class="phone-frame">
           <span class="phone-screen">
-            <span class="status-pill">${project.name}</span>
+            <span class="status-pill">${escapeHtml(project.name)}</span>
             <span class="phone-content">
-              <span class="phone-title">${project.tagline}</span>
-              <span class="phone-description">${project.description}</span>
+              <span class="phone-title">${escapeHtml(project.tagline)}</span>
+              <span class="phone-description">${escapeHtml(project.description)}</span>
             </span>
             ${renderWidget(project.widget)}
           </span>
         </span>
       </button>
-      <ul class="phone-stack" aria-label="Công nghệ của ${project.name}">${stack}</ul>
+      <ul class="phone-stack" aria-label="Công nghệ của ${escapeHtml(project.name)}">${stack}</ul>
     </article>
   `;
 }
@@ -53,5 +54,5 @@ function projectTemplate(project) {
 export function renderProjects() {
   const rail = document.querySelector("[data-project-rail]");
   if (!rail) return;
-  rail.innerHTML = projects.map(projectTemplate).join("");
+  rail.innerHTML = getProjects().map(projectTemplate).join("");
 }

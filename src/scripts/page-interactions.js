@@ -4,7 +4,8 @@ export function initCaseFilters() {
   const group = document.querySelector("[data-filter-group]");
   const cards = [...document.querySelectorAll(".case-card")];
   const count = document.querySelector("[data-filter-count]");
-  if (!group || !cards.length) return;
+  if (!group || !cards.length || group.dataset.filterBound) return;
+  group.dataset.filterBound = "true";
 
   function applyFilter(filter) {
     let visibleCount = 0;
@@ -46,7 +47,8 @@ export function initCaseToggles() {
 
 export function initTabs() {
   const root = document.querySelector("[data-tabs]");
-  if (!root) return;
+  if (!root || root.dataset.tabsBound) return;
+  root.dataset.tabsBound = "true";
   const tabs = [...root.querySelectorAll('[role="tab"]')];
   const panels = [...root.querySelectorAll('[role="tabpanel"]')];
 
@@ -77,7 +79,8 @@ export function initReadinessChecklist() {
   const count = document.querySelector("[data-check-count]");
   const progress = document.querySelector("[data-check-progress]");
   const reset = document.querySelector("[data-reset-checklist]");
-  if (!checks.length || !count) return;
+  if (!checks.length || !count || count.dataset.checklistBound) return;
+  count.dataset.checklistBound = "true";
 
   const saved = JSON.parse(localStorage.getItem(checklistStorageKey) || "[]");
   checks.forEach((item, index) => { item.checked = Boolean(saved[index]); });
