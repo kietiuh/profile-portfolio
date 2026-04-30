@@ -16,7 +16,7 @@ function projectTemplate(project) {
   const stack = project.stack.map((item) => `<li>${item}</li>`).join("");
 
   return `
-    <article class="phone-card phone-card--${project.id}" data-project-id="${project.id}" data-accent="${project.accent}">
+    <article class="phone-card phone-card--${project.id}" data-project-id="${project.id}" data-accent="${project.accent}" data-reveal>
       <button class="phone-button" type="button" aria-label="Xem chi tiết ${project.name}">
         <span class="phone-frame">
           <span class="phone-screen">
