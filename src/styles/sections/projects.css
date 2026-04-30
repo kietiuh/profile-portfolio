@@ -490,3 +490,107 @@
   background: rgba(24,25,31,.88);
   border-color: rgba(255,255,255,.14);
 }
+
+
+/* App showcase corrective pass: keep mockups vertical, readable, and compact. */
+.phone-rail {
+  align-items: start;
+  padding-bottom: 18px;
+}
+
+.phone-card {
+  min-height: auto;
+  align-content: start;
+  justify-items: center;
+  padding: 10px 0 4px;
+}
+
+.phone-button,
+.phone-frame,
+.phone-screen {
+  display: block;
+}
+
+.phone-frame {
+  width: min(100%, 320px);
+  max-width: 320px;
+  min-height: 660px;
+}
+
+.phone-screen {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  padding: 64px 24px 28px;
+}
+
+.status-pill {
+  top: 22px;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.screen-widget {
+  position: static;
+  align-self: center;
+  width: 100%;
+  min-height: 285px;
+}
+
+.phone-content {
+  align-self: end;
+  gap: 12px;
+}
+
+.phone-title {
+  font-size: clamp(1.72rem, 2.6vw, 2.04rem);
+}
+
+.phone-description {
+  font-size: .94rem;
+  line-height: 1.45;
+}
+
+.widget-calendar,
+.widget-chart,
+.widget-people {
+  height: auto;
+}
+
+.widget-chart {
+  align-content: center;
+}
+
+.widget-people {
+  align-content: center;
+}
+
+.phone-stack {
+  margin-top: 0;
+}
+
+.phone-card:not(.is-centered) .phone-frame {
+  transform: scale(.94);
+}
+
+.phone-card:hover .phone-frame,
+.phone-button:focus-visible .phone-frame {
+  transform: translateY(-8px) scale(1);
+}
+
+@media (max-width: 760px) {
+  .phone-frame {
+    width: min(100%, 300px);
+    min-height: 620px;
+  }
+
+  .phone-screen {
+    padding: 60px 22px 26px;
+  }
+
+  .screen-widget {
+    min-height: 250px;
+  }
+}
