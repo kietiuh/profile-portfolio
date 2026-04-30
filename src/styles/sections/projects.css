@@ -476,3 +476,17 @@
     border-radius: 30px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-card:not(.is-centered) .phone-frame,
+  .phone-card.is-centered .phone-frame,
+  .phone-card:hover .phone-frame,
+  .phone-button:focus-visible .phone-frame {
+    transform: none;
+  }
+}
+
+:root[data-theme="dark"] .detail-panel {
+  background: rgba(24,25,31,.88);
+  border-color: rgba(255,255,255,.14);
+}

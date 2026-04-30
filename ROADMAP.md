@@ -27,6 +27,6 @@ Quality gate before every commit:
 - [x] 15. Add cursor spotlight/glass card interaction.
 - [x] 16. Add copy email toast interaction.
 - [x] 17. Add SEO/social metadata, favicon, robots, sitemap.
-- [ ] 18. Add build/quality tooling if approved; otherwise keep no-dependency gates.
+- [x] 18. Keep no-dependency quality gates; no extra tooling installed without approval.
 - [ ] 19. Final responsive/accessibility/performance pass.
 - [ ] 20. Final documentation and project summary.
