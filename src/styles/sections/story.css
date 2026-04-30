@@ -1,0 +1,112 @@
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.story-card,
+.process-step,
+.metric-card {
+  border: 1px solid rgba(255,255,255,.82);
+  background: rgba(255,255,255,.58);
+  backdrop-filter: blur(20px) saturate(1.24);
+  box-shadow: 0 18px 70px rgba(29,29,31,.08);
+}
+
+.story-card {
+  min-height: 320px;
+  padding: 28px;
+  border-radius: 32px;
+  display: grid;
+  align-content: end;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-card::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border-radius: 28px;
+  background: var(--story-glow);
+  filter: blur(24px);
+  opacity: .72;
+}
+
+.story-card > * { position: relative; }
+.story-card--sage { --story-glow: radial-gradient(circle at 30% 20%, rgba(141,179,155,.28), transparent 62%); }
+.story-card--blue { --story-glow: radial-gradient(circle at 70% 20%, rgba(71,89,255,.22), transparent 62%); }
+.story-card--rose { --story-glow: radial-gradient(circle at 50% 20%, rgba(216,121,164,.24), transparent 62%); }
+
+.story-card h3,
+.process-step h3 {
+  font-size: 1.45rem;
+  letter-spacing: -.04em;
+}
+
+.story-card p,
+.process-step p,
+.metric-card p {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.process-rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.process-step {
+  min-height: 210px;
+  padding: 22px;
+  border-radius: 28px;
+}
+
+.process-index {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  aspect-ratio: 1;
+  margin-bottom: 24px;
+  border-radius: 999px;
+  background: var(--text);
+  color: white;
+  font-size: .82rem;
+  font-weight: 760;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .8fr;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.metric-card {
+  padding: 30px;
+  border-radius: 32px;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: .9;
+  letter-spacing: -.07em;
+}
+
+.metric-card span {
+  display: block;
+  margin-top: 12px;
+  color: var(--text);
+  font-weight: 720;
+}
+
+@media (max-width: 880px) {
+  .story-grid,
+  .process-rail,
+  .metrics-grid { grid-template-columns: 1fr; }
+  .story-card { min-height: 260px; }
+}

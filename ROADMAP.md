@@ -19,9 +19,9 @@ Quality gate before every commit:
 - [x] 07. Upgrade phone mockups and in-phone UI details.
 - [x] 08. Add carousel center-focus behavior and project accent state.
 - [x] 09. Add project detail drawer/modal with keyboard support.
-- [ ] 10. Add case study/storytelling sections.
-- [ ] 11. Add process/philosophy section.
-- [ ] 12. Add metrics/design principles section.
+- [x] 10. Add case study/storytelling sections.
+- [x] 11. Add process/philosophy section.
+- [x] 12. Add metrics/design principles section.
 - [ ] 13. Add light/dark theme system with persistence.
 - [ ] 14. Add scroll progress indicator.
 - [ ] 15. Add cursor spotlight/glass card interaction.
