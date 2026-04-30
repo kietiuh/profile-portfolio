@@ -112,9 +112,47 @@
 
 .phone-card {
   scroll-snap-align: center;
-  min-height: 680px;
+  min-height: 720px;
   display: grid;
   place-items: center;
+  gap: 18px;
+}
+
+.phone-button {
+  appearance: none;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.phone-button:focus-visible .phone-frame {
+  outline: 3px solid rgba(0, 113, 227, .36);
+  outline-offset: 6px;
+}
+
+.phone-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: min(100%, 342px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phone-stack li {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #86868b;
+  background: rgba(255,255,255,.54);
+  font-size: .78rem;
+  font-weight: 650;
 }
 
 .phone-frame {
@@ -143,7 +181,8 @@
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
 }
 
-.phone-card:hover .phone-frame {
+.phone-card:hover .phone-frame,
+.phone-button:focus-visible .phone-frame {
   transform: translateY(-8px);
   box-shadow: var(--shadow-hover);
 }
@@ -178,7 +217,8 @@
   background: linear-gradient(to top, rgba(0,0,0,.52), rgba(0,0,0,.08) 58%, rgba(255,255,255,.12));
 }
 
-.phone-card:hover .phone-screen::before { transform: scale(1.05); }
+.phone-card:hover .phone-screen::before,
+.phone-button:focus-visible .phone-screen::before { transform: scale(1.05); }
 
 .phone-card--mori { --screen-bg: radial-gradient(circle at 25% 20%, #d9ffe3, transparent 28%), linear-gradient(160deg, #8db39b, #24382d 76%); }
 .phone-card--tranx { --screen-bg: radial-gradient(circle at 72% 18%, #c9f3ff, transparent 28%), linear-gradient(160deg, #4759ff, #101326 78%); }
@@ -198,14 +238,22 @@
   font-weight: 650;
 }
 
-.phone-screen h3 {
-  font-size: 2.1rem;
-  letter-spacing: -0.055em;
+.phone-content {
+  display: grid;
+  gap: 14px;
+  text-align: left;
 }
 
-.phone-screen p {
-  margin-top: 14px;
+.phone-title {
+  font-size: 2.1rem;
+  font-weight: 760;
+  letter-spacing: -0.055em;
+  line-height: .98;
+}
+
+.phone-description {
   color: rgba(255,255,255,.78);
+  font-size: 1rem;
 }
 
 .screen-widget {

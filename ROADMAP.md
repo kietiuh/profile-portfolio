@@ -10,7 +10,7 @@ Quality gate before every commit:
 
 ## Tasks
 
-- [ ] 01. Add roadmap/task tracker and quality checklist.
+- [x] 01. Add roadmap/task tracker and quality checklist.
 - [ ] 02. Introduce JavaScript architecture and data-driven project rendering.
 - [ ] 03. Refactor CSS into section files for maintainability.
 - [ ] 04. Add scroll reveal motion system with reduced-motion support.
