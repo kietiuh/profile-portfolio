@@ -1,11 +1,13 @@
 import { projects } from "../data/projects.js";
 
-function caseCardTemplate(project) {
+function caseCardTemplate(project, index) {
+  const stack = project.stack.map((item) => `<span>${item}</span>`).join("");
   return `
-    <article class="case-card" data-category="${project.category}" data-cursor-label="Read" data-reveal>
+    <article class="case-card case-card--${project.storyTone}" style="--case-index:${index}" data-category="${project.category}" data-cursor-label="Read" data-reveal>
       <span class="case-kicker">${project.type}</span>
       <h3>${project.name}</h3>
       <p>${project.description}</p>
+      <div class="case-stack" aria-label="${project.name} stack">${stack}</div>
       <button class="case-toggle" type="button" aria-expanded="false">Open case notes</button>
       <div class="case-notes" hidden>
         <dl>

@@ -9,11 +9,16 @@ export function initCaseFilters() {
   function applyFilter(filter) {
     let visibleCount = 0;
     cards.forEach((card) => {
+      card.hidden = false;
       const visible = filter === "all" || card.dataset.category === filter;
-      card.hidden = !visible;
+      card.classList.toggle("is-filtered-out", !visible);
+      card.setAttribute("aria-hidden", String(!visible));
       if (visible) visibleCount += 1;
     });
     if (count) count.textContent = `Showing ${visibleCount} case ${visibleCount === 1 ? "study" : "studies"}`;
+    window.setTimeout(() => {
+      cards.forEach((card) => { card.hidden = card.classList.contains("is-filtered-out"); });
+    }, 260);
   }
 
   group.addEventListener("click", (event) => {
