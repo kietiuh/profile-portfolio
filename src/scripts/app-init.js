@@ -8,12 +8,14 @@ import { initProjectDetail } from "./project-detail.js";
 import { initTheme } from "./theme.js";
 import { initPageInteractions } from "./page-interactions.js";
 import { initCopyEmail, initScrollProgress, initSpotlight } from "./page-effects.js";
+import { initSmoothScroll, refreshSmoothScroll } from "./smooth-scroll.js";
 
 let booted = false;
 
 export function initPage() {
   if (!booted) {
     initTheme();
+    initSmoothScroll();
     booted = true;
   }
 
@@ -29,5 +31,6 @@ export function initPage() {
   initSpotlight();
   initCopyEmail();
   initPageInteractions();
+  refreshSmoothScroll();
   document.dispatchEvent(new CustomEvent("portfolio:page-ready"));
 }

@@ -1,4 +1,5 @@
 import { initPage } from "./app-init.js";
+import { smoothScrollTo } from "./smooth-scroll.js";
 
 const parser = new DOMParser();
 const routeSelector = "main";
@@ -45,10 +46,15 @@ function replacePage(nextDocument) {
 function scrollForUrl(url) {
   const target = new URL(url, window.location.href);
   if (target.hash) {
-    requestAnimationFrame(() => document.querySelector(target.hash)?.scrollIntoView({ block: "start" }));
+    requestAnimationFrame(() => {
+      const element = document.querySelector(target.hash);
+      if (!element) return;
+      smoothScrollTo(element.getBoundingClientRect().top + window.scrollY, true);
+    });
     return;
   }
-  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  smoothScrollTo(0, true);
+  window.scrollTo(0, 0);
 }
 
 async function navigate(url, { history = true } = {}) {
